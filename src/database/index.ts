@@ -1,1 +1,3 @@
-import { CreateCon } from "typeorm";
+import { createConnection } from "typeorm";
+
+createConnection();
