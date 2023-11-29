@@ -1,7 +1,7 @@
-version: '3.7'
+version: '3'
 
 services:
-  database_concept_node:
+  database:
     image: postgres
     container_name: database_concept_node
     restart: always
@@ -11,8 +11,10 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=Dr@gon
       - POSTGRES_DB=concept_node
+    volumes:
+      - ./pg_data:/data/postgres
     networks:
-      - default
+      - backend_concept_node
 
 
   app:
@@ -23,6 +25,12 @@ services:
     volumes:
       - .:/usr/app
     links:
-     - database_concept_node
+     - database
     depends_on:
-     - database_concept_node
+     - database
+    networks:
+      - backend_concept_node
+
+networks:
+  backend_concept_node:
+    driver: bridge
