@@ -1,10 +1,28 @@
 version: '3.7'
 
 services:
+  database_concept_node:
+    image: postgres
+    container_name: database_concept_node
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=Dr@gon
+      - POSTGRES_DB=concept_node
+    networks:
+      - default
+
+
   app:
     build: .
-    container_name: rentx
+    container_name: concept_node
     ports:
       - 3333:3333
     volumes:
       - .:/usr/app
+    links:
+     - database_concept_node
+    depends_on:
+     - database_concept_node
