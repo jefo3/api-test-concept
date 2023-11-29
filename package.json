@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts --watch",
-    "start:main": "src/index.ts"
+    "start:main": "src/index.ts",
+    "typeorm":  "ts-node-dev ./node_modules/typeorm/cli"
   },
   "dependencies": {
     "csv-parse": "^5.5.2",

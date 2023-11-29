@@ -4,5 +4,9 @@
   "host": "database_concept_node",
   "username": "docker",
   "password": "Dr@gon",
-  "database": "concept_node"
+  "database": "concept_node",
+  "migrations": ["./src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
 }
