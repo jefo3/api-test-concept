@@ -1,7 +1,7 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "database_concept_node",
+  "host": "localhost",
   "username": "docker",
   "password": "Dr@gon",
   "database": "concept_node",
