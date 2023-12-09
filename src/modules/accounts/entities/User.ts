@@ -4,10 +4,13 @@ import { v4 as uuidV4 } from "uuid";
 @Entity("users")
 class User {
   @PrimaryColumn()
-  id: string;
+  id?: string;
 
   @Column()
   name: string;
+
+  @Column()
+  username: string;
 
   @Column()
   email: string;
@@ -22,7 +25,7 @@ class User {
   isAdmin: boolean;
 
   @CreateDateColumn()
-  created_ad: Date;
+  created_at: Date;
 
   constructor() {
     if (!this.id) {
