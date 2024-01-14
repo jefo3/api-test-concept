@@ -1,5 +1,6 @@
-import { AppError } from "../../../../erros/AppError";
-import { CategoriesRepositoryInMemory } from "../../repositories/inMemory/CategoriesRepositoryInMemory";
+import { AppError } from "@erros/AppError";
+import { CategoriesRepositoryInMemory } from "@modules/cars/repositories/inMemory/CategoriesRepositoryInMemory";
+
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 let createCategoryUseCase: CreateCategoryUseCase;
